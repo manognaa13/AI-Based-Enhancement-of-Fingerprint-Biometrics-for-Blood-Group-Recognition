@@ -1,0 +1,89 @@
+"<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Learning Project</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/templatemo-style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body style="padding-top: 56px; background-color: rgb(226, 226, 226)">
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-white bg-white fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i>Blood group detection using fingerprint images</i>
+                
+            </a>
+    
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-1" aria-current="page" href="{% url 'home' %}">User Home</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-4" href="{% url 'index' %}">Logout</a>
+                    </li>
+                </ul>                
+            </div>
+        </div>
+    </nav>
+    <center>
+        {% if predicted_label %}
+        <div class="row">
+            <h2 style="color: black;">Model Prediction</h2>
+        </div>
+
+        <div class="row">
+            <h4 style="color: maroon;">Predicted Image is: <strong>{{ predicted_label }}</strong></h4>
+        </div>
+        {% endif %}<br>
+    </center>
+    
+    <div  class="tm-hero d-flex justify-content-center align-items-center" id="tm-video-container">
+        <video autoplay muted loop id="tm-video">
+            <source src="static\video\6583-193389017_small.mp4" type="video/mp4">
+        </video> 
+        <form class="d-flex position-absolute tm-search-form" action="{% url 'home2' %}" method="post" enctype="multipart/form-data">
+          
+            {% csrf_token %}
+            <div class="row">
+                <input style="width: 300px;" class="btn btn-outline-success tm-search-btn" type="file" name="image" accept="image/*" required>
+                <button class="btn btn-outline-success tm-search-btn" type="submit">
+                    Submit
+                </button>
+            </div>
+            
+        </form>
+              
+    </div>
+
+    <center>
+
+
+        <h3>Innovating Blood Group ID through Fingerprint Technology</h3></center>
+    <p><b>In our project, we focus on classifying blood groups using advanced fingerprint recognition technology. Blood groups play a crucial role in medical emergencies, organ donations, and blood transfusions, making accurate identification essential. Our dataset includes the eight main blood types: A+, A-, AB+, AB-, B+, B-, O+, and O-. To achieve precise classification, we employ state-of-the-art machine learning algorithms, including Convolutional Neural Networks (CNNs), MobileNet, and a hybrid model combining ResNet with Recurrent Neural Networks (RNNs). CNNs are particularly effective for image recognition tasks, allowing us to analyze fingerprint patterns with high accuracy. MobileNet offers a lightweight solution for efficient processing, ideal for real-time applications. The hybrid ResNet-RNN model enhances our classification capabilities by combining the strengths of both architectures, making it suitable for complex pattern recognition.Our innovative approach aims to streamline blood group identification, improving response times in critical situations. By integrating fingerprint technology with advanced algorithms, we are paving the way for a reliable and user-friendly solution that ensures safe and accurate blood group identification.</b></p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/static/js/plugins.js"></script>
+    <script>
+        $(window).on("load", function() {
+            $('body').addClass('loaded');
+        });
+    </script>
+
+</body>
+</html>

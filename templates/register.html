@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"> 
+  <head> 
+      <meta charset="UTF-8"> 
+      <title>Register page</title> 
+      <link rel="stylesheet" href="/static/css/login.css">
+  </head> 
+
+  <body> 
+
+    <section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+      <div class="signin"> 
+        <div class="content"> 
+          <h2>Registration</h2> 
+          <div class="form"> 
+            <form action="{% url 'register' %}" method="post">
+                {% csrf_token %} <!-- Include the CSRF token -->
+                
+                <div class="inputBox"> 
+                    <input style="color: white;" type="text" name="name" required> <i> Username</i> 
+                </div> <br>
+        
+                <div class="inputBox"> 
+                    <input type="email" name="email" required> <i>Email</i> 
+                </div> <br>
+        
+                <div class="inputBox"> 
+                    <input type="password" name="password" required> <i>Password</i> 
+                </div> <br>
+        
+                <div class="inputBox"> 
+                    <input type="password" name="c_password" required> <i>Confirm Password</i> 
+                </div> <br>
+        
+                <div class="inputBox"> 
+                    <input type="submit" value="submit"> 
+                </div> <br>
+
+                <div class="links"> 
+                  <a href="{% url 'login' %}">Already you have an account?</a> 
+                  <a href="{% url 'login' %}">Login</a> 
+              </div> <br>
+            </form>
+        </div>
+        
+          </div> 
+        </div> 
+      </div> 
+    </section> 
+
+
+    
+  </body>
+</html>
